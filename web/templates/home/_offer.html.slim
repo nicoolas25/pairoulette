@@ -5,6 +5,7 @@ section.offer
     img.offer-avatar height="48" width="48" src=offer.gravatar_url
     h2.offer-title = offer.short_summary
     p.offer-meta
+      a.offer-category.offer-category-duration = offer.human_duration
       - offer.languages.each do |language|
         a.offer-category class="offer-category-#{language}" = language
 

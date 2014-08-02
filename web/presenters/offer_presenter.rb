@@ -21,6 +21,10 @@ module Pairoulette
       "http://www.gravatar.com/avatar/#{hash}"
     end
 
+    def human_duration
+      "#{duration} min"
+    end
+
     private
 
     def shortenize(string)

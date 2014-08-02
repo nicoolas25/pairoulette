@@ -2,14 +2,15 @@ require 'faker'
 require 'pairoulette/offer'
 
 module Factory
-  ORDER_LANGS = %w(fr en es de).freeze
+  ORDER_LANGS = %w(fr en).freeze
 
   def self.offer(attributes = {})
     default = {
       email: Faker::Internet.email,
       duration: 30 + (rand(7) * 10),
-      lang: 2.times.map { ORDER_LANGS.sample }.join(' '),
-      summary: Faker::Lorem.sentence,
+      lang: ORDER_LANGS.sample,
+      summary: Faker::Lorem.paragraph(2, false, 3),
+      comments: Faker::Lorem.paragraph(1, false, 2),
     }
     attributes = default.merge(attributes)
     Pairoulette::Offer.new(attributes)

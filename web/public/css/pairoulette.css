@@ -93,9 +93,10 @@ h3 {
     padding-bottom: 2em;
 }
 .offer-title {
-    font-size: 2em;
+    font-size: 1.4em;
     color: #222;
     margin-bottom: 0.2em;
+    font-weight: normal
 }
 .offer-avatar {
     border-radius: 50px;
@@ -121,16 +122,13 @@ h3 {
     font-size: 80%;
 }
     .offer-category-fr {
-        background: #5aba59;
+        background: #df2d4f;
     }
     .offer-category-en {
         background: #4d85d1;
     }
-    .offer-category-es {
-        background: #8156a7;
-    }
-    .offer-category-de {
-        background: #df2d4f;
+    .offer-category-duration {
+        background: #5aba59;
     }
 
 .offer-images {

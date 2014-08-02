@@ -12,4 +12,9 @@ namespace :db do
     require 'pairoulette/migrator'
     Pairoulette::Migrator.migrate!
   end
+
+  desc 'Load dummy data'
+  task seed: :migrate do
+    load './db/seeds.rb'
+  end
 end
