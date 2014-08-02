@@ -84,6 +84,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (2.0.1)
+    timecop (0.7.1)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     url_mount (0.2.1)
@@ -107,3 +108,4 @@ DEPENDENCIES
   rspec
   slim
   sqlite3
+  timecop

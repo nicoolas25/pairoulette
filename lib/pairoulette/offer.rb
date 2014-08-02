@@ -18,7 +18,8 @@ module Pairoulette
     end
 
     def approved
-      @approved ||= false
+      @approved = false if @approved.nil?
+      @approved
     end
 
     def expires_at

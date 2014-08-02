@@ -13,5 +13,6 @@ gem 'activesupport'
 
 gem 'faker'
 gem 'chronic'
+gem 'timecop'
 gem 'rspec'
 gem 'capybara'
