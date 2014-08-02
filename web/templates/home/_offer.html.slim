@@ -1,0 +1,13 @@
+- offer = Pairoulette::OfferPresenter.new(self.offer)
+
+section.offer
+  header.offer-header
+    img.offer-avatar height="48" width="48" src=offer.gravatar_url
+    h2.offer-title = offer.short_summary
+    p.offer-meta
+      - offer.languages.each do |language|
+        a.offer-category class="offer-category-#{language}" = language
+
+  .offer-description
+    p = offer.summary
+    p = offer.comments
