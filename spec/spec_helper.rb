@@ -2,6 +2,10 @@ ENV['RACK_ENV'] = ENV['LOTUS_ENV'] ||= 'test'
 
 require 'bundler/setup'
 require 'dotenv/deployment'
+require 'capybara'
+require 'capybara/rspec'
+require 'chronic'
+
 require 'pairoulette'
 
 Dir[__dir__ + '/support/**/*.rb'].each {|f| require f }
@@ -58,4 +62,13 @@ RSpec.configure do |config|
     # a real object. This is generally recommended.
     mocks.verify_partial_doubles = true
   end
+
+  def config.escaped_path(*parts)
+    Regexp.compile(parts.join('[\\\/]') + '[\\\/]')
+  end
+
+  config.include RSpec::FeatureExampleGroup, type: :feature, file_path: config.escaped_path(%w[spec web features])
+
+  config.include Capybara::DSL,           feature: true
+  config.include Capybara::RSpecMatchers, feature: true
 end
