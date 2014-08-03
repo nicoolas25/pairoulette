@@ -11,7 +11,7 @@ module Pairoulette
 
     include Lotus::Entity
 
-    self.attributes = :uid, :email, :duration, :summary, :lang, :comments, :approved, :expires_at
+    self.attributes = :uid, :email, :duration, :summary, :lang, :comments, :approved, :expires_at, :updated_at
 
     def uid
       @uid ||= SecureRandom.uuid

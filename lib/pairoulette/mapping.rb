@@ -22,6 +22,7 @@ module Pairoulette
       attribute :comments,   String
       attribute :approved,   Boolean
       attribute :expires_at, DateTime
+      attribute :updated_at, DateTime
     end
 
     collection :requests do

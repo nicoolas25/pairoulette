@@ -15,6 +15,7 @@ module Pairoulette
         String :comments, text: true
         TrueClass :approved, null: false, default: false
         DateTime :expires_at, null: false
+        DateTime :updated_at, null: false
       end
 
       db.create_table! :requests do
