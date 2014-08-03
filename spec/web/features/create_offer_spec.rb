@@ -30,5 +30,12 @@ feature 'Create offer' do
 
     # Then the new offer should have been stored in the repository
     expect(repository.first).to_not be_nil
+
+
+    # Given we go back to the offer's list
+    visit '/'
+
+    # Then the offer should be here
+    expect(page).to have_selector('.offers section.offer')
   end
 end

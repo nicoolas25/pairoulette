@@ -8,9 +8,14 @@ module Pairoulette::Controllers::Offers
 
     def call(params)
       @offer = build_offer_from(params)
+      repository.persist(@offer)
     end
 
     private
+
+    def repository
+      Pairoulette::Repositories::OfferRepository
+    end
 
     def build_offer_from(params)
       Pairoulette::Offer.new({

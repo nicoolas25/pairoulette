@@ -3,19 +3,19 @@ form#offer-create class="pure-form pure-form-stacked" action="#{Pairoulette::Rou
     legend Propose a session to the world
 
     label for="email" Email
-    input#email name="email" type="email" placeholder="your@email.com"
+    input#email name="email" type="email" required="required" placeholder="your@email.com"
 
     label for="duration" Duration
-    input#duration name="duration" type="number" placeholder="45"
+    input#duration name="duration" type="number" required="required" placeholder="45"
 
     label for="lang" Language
-    select#lang name="lang"
+    select#lang name="lang" required="required"
       option value="en" English
       option value="fr" French
       option value="en fr" French or English
 
     label for="summary" Summary
-    textarea#summary name="summary" rows="5" placeholder="What you want to do during the session, how, why you're offering a session, ..."
+    textarea#summary name="summary" rows="5" required="required" placeholder="What you want to do during the session, how, why you're offering a session, ..."
 
     label for="comments" Comments
     textarea#comments name="comments" rows="5" placeholder="Tell us about the tools you use or want to use, about the desired level of the person you're looking for, ..."
