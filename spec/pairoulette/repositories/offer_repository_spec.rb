@@ -8,6 +8,7 @@ describe Pairoulette::Repositories::OfferRepository do
     subject { repository.visible }
 
     before do
+      repository.clear
       3.times { repository.persist(Factory.offer) }
       2.times { repository.persist(Factory.expired_offer) }
     end
