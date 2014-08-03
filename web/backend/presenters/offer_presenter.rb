@@ -12,5 +12,9 @@ module Backend
     def f_expires_on
       expires_at.strftime('⇥ %Y-%m-%d')
     end
+
+    def lang_selected(candidate)
+      lang == candidate ? 'selected' : '0'
+    end
   end
 end

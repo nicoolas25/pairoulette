@@ -176,6 +176,11 @@ h3 {
     }
 }
 
-#offer-create textarea, #offer-create input, #offer-create select {
+#offer-update textarea,
+#offer-create textarea,
+#offer-update input,
+#offer-create input,
+#offer-update select,
+#offer-create select {
   width: 100%;
 }

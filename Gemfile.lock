@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/alexch/rerun.git
+  revision: db85618e5677314e854850918e1d722284328141
+  specs:
+    rerun (0.10.0)
+      listen (~> 2.7, >= 2.7.3)
+
+GIT
   remote: git://github.com/lotus/lotus.git
   revision: 11ce2b3e9e6483ed97fa8a9ac7a5db15ba662234
   specs:
@@ -32,6 +39,8 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    celluloid (0.15.2)
+      timers (~> 1.1.0)
     chronic (0.10.2)
     coderay (1.1.0)
     diff-lcs (1.2.5)
@@ -40,11 +49,16 @@ GEM
     dotenv-deployment (0.0.2)
     faker (1.2.0)
       i18n (~> 0.5)
+    ffi (1.9.3)
     http_router (0.11.1)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     i18n (0.6.11)
     json (1.8.1)
+    listen (2.7.9)
+      celluloid (>= 0.15.2)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
     lotus-controller (0.2.0)
       lotus-utils (~> 0.2)
       rack (~> 1.5)
@@ -69,6 +83,9 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.3.2)
+    rb-fsevent (0.9.4)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -92,6 +109,7 @@ GEM
     thread_safe (0.3.4)
     tilt (2.0.1)
     timecop (0.7.1)
+    timers (1.1.0)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
     url_mount (0.2.1)
@@ -113,6 +131,7 @@ DEPENDENCIES
   lotusrb!
   pry
   rake
+  rerun!
   rspec
   slim
   sqlite3

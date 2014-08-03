@@ -8,6 +8,7 @@ module Backend
       routes do
         namespace 'backend' do
           get  '/:uid', to: 'offers#monitor', as: :monitor
+          post '/:uid', to: 'offers#update',  as: :update
         end
       end
 

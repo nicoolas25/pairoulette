@@ -16,4 +16,6 @@ gem 'chronic'
 gem 'timecop'
 gem 'rspec'
 gem 'capybara'
+
 gem 'pry'
+gem 'rerun', github: 'alexch/rerun'
