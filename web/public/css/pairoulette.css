@@ -131,7 +131,7 @@ h3 {
     .offer-category-en {
         background: #4d85d1;
     }
-    .offer-category-duration {
+    .offer-category-duration, .offer-category-expiration {
         background: #5aba59;
     }
 

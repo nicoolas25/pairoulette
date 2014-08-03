@@ -1,2 +1,13 @@
 .offers
   h1.content-subhead Offer's details
+
+  section.offer
+    header.offer-header
+      img.offer-avatar height="48" width="48" src=offer.gravatar_url
+      h2.offer-title = offer.email
+      p.offer-meta
+        a.offer-category.offer-category-expiration = offer.f_expires_on
+
+    .offer-description
+      p = offer.summary
+      p = offer.comments

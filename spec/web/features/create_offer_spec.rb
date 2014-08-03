@@ -1,8 +1,6 @@
-require 'pry'
 require 'spec_helper'
-require 'pairoulette/repositories/offer_repository'
 
-feature 'Create offer' do
+feature 'Create an offer' do
   let(:repository) { Pairoulette::Repositories::OfferRepository }
 
   background do
@@ -11,9 +9,10 @@ feature 'Create offer' do
   end
 
   scenario 'A visitor publish a new offer' do
+    # When the visitor is on the offer submission page
     visit '/submit'
 
-    # The new_offer page should show a form
+    # Then the new_offer page should show a form
     expect(page).to have_selector('form#offer-create')
 
     # Given we fill correctly and submit the form
