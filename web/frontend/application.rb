@@ -1,7 +1,7 @@
 require 'lotus'
 
-module Pairoulette
-  class Web < Lotus::Application
+module Frontend
+  class Application < Lotus::Application
     configure do
       root __dir__
 

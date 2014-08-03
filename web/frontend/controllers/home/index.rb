@@ -1,8 +1,8 @@
 require 'pairoulette'
 
-module Pairoulette::Controllers::Home
+module Frontend::Controllers::Home
   class Index
-    include Pairoulette::Action
+    include Frontend::Action
 
     expose :offers
 

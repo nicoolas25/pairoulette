@@ -1,6 +1,6 @@
 require 'digest/md5'
 
-module Pairoulette
+module Frontend
   class OfferPresenter
     include Lotus::Presenter
 

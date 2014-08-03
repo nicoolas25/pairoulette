@@ -1,8 +1,8 @@
 require 'pairoulette'
 
-module Pairoulette::Controllers::Offers
+module Frontend::Controllers::Offers
   class New
-    include Pairoulette::Action
+    include Frontend::Action
 
     expose :offer
 

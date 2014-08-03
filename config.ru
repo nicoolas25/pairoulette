@@ -1,4 +1,8 @@
 require_relative './config/env'
-require_relative './web/application'
+require_relative './web/frontend/application'
 
-run Pairoulette::Web.new
+app = Lotus::Router.new do
+  mount Frontend::Application, at: '/'
+end
+
+run app
