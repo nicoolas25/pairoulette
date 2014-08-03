@@ -30,4 +30,30 @@ describe Pairoulette::Repositories::OfferRepository do
       end
     end
   end
+
+  describe '.find_by_uid' do
+    let(:uid) { '01234567-89ab-cdef-0123-456789abcdef' }
+
+    subject { repository.find_by_uid(uid) }
+
+    before do
+      repository.clear
+    end
+
+    context 'when there is no offer matching the given uid' do
+      it 'returns nil' do
+        expect(subject).to be_nil
+      end
+    end
+
+    context 'when an offer with the given uid exists' do
+      before do
+        repository.persist(Factory.offer(uid: uid))
+      end
+
+      it 'retrieves an offer by its uid' do
+        expect(subject).to be_a_kind_of(Pairoulette::Offer)
+      end
+    end
+  end
 end

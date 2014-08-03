@@ -9,6 +9,7 @@ module Frontend::Controllers::Offers
     def call(params)
       @offer = build_offer_from(params)
       repository.persist(@offer)
+      redirect_to Backend::Routes.path(:monitor, uid: @offer.uid)
     end
 
     private

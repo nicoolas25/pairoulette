@@ -1,14 +1,14 @@
 require 'lotus'
 
-module Frontend
+module Backend
   class Application < Lotus::Application
     configure do
       root __dir__
 
       routes do
-        get  '/',       to: 'home#index',    as: :home
-        get  '/submit', to: 'offers#new',    as: :new_offer
-        post '/submit', to: 'offers#create', as: :create_offer
+        namespace 'backend' do
+          get  '/:uid', to: 'offers#monitor', as: :monitor
+        end
       end
 
       load_paths << [
@@ -17,7 +17,7 @@ module Frontend
         'views'
       ]
 
-      layout    :frontend
+      layout    :backend
 
       templates 'templates'
       assets    '../public'

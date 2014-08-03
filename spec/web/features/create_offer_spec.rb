@@ -1,3 +1,4 @@
+require 'pry'
 require 'spec_helper'
 require 'pairoulette/repositories/offer_repository'
 
@@ -25,8 +26,8 @@ feature 'Create offer' do
       click_button 'Publish'
     end
 
-    # Then the resulting page should show the newly created offer
-    expect(page).to have_selector('.offers section.offer')
+    # Then the user should have been redirected to the monitoring
+    expect(current_path).to match(%r{/backend/[\-0-9a-f]{36}})
 
     # Then the new offer should have been stored in the repository
     expect(repository.first).to_not be_nil

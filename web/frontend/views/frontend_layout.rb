@@ -1,5 +1,5 @@
 module Frontend::Views
-  class ApplicationLayout
+  class FrontendLayout
     include Frontend::Layout
   end
 end
