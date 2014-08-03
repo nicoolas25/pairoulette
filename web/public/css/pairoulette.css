@@ -176,6 +176,6 @@ h3 {
     }
 }
 
-textarea {
+#offer-create textarea, #offer-create input, #offer-create select {
   width: 100%;
 }
