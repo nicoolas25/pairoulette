@@ -8,9 +8,9 @@ require 'chronic'
 
 require 'pairoulette'
 
-# Shut down an activesupport warning with i18n. The app is not using it, that's
-# too bad that it's imported.
-I18n.enforce_available_locales = false
+# FIXME: Shut down an activesupport warning with i18n. The app is not using it,
+# that's too bad that it's imported.
+I18n.enforce_available_locales = false if defined?(I18n)
 
 Dir[__dir__ + '/support/**/*.rb'].each {|f| require f }
 

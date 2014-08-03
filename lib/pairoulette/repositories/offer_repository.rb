@@ -13,7 +13,7 @@ module Pairoulette::Repositories
     def self.visible
       query do
         where{ expires_at >= Time.now }.
-          order{ updated_at.desc }
+          desc(:updated_at)
       end
     end
   end
