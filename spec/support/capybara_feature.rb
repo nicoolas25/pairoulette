@@ -1,5 +1,5 @@
-require_relative '../../web/frontend/application'
-require_relative '../../web/backend/application'
+require 'web/frontend/application'
+require 'web/backend/application'
 
 module RSpec
   module FeatureExampleGroup

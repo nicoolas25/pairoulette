@@ -1,11 +1,11 @@
-require 'pairoulette'
-Pairoulette.load!
+require 'domain'
+Domain.load!
 
 require_relative '../spec/support/factory'
 
 puts 'Create random offers...'
 
-repository = Pairoulette::Repositories::OfferRepository
+repository = Domain::Repositories::OfferRepository
 5.times do
   offer = Factory.offer
   repository.persist(offer)

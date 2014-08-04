@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'timecop'
 
-require 'pairoulette/offer'
+require 'domain/repositories/offer_repository'
 
 describe '#uid' do
   let(:offer) { Factory.offer }
@@ -17,7 +17,7 @@ describe '#expires_at' do
 
   it 'is set Offer::EXPIRATION_DELAY after today' do
     Timecop.freeze do
-      expiration_time = Time.now + Pairoulette::Offer::EXPIRATION_DELAY
+      expiration_time = Time.now + Domain::Offer::EXPIRATION_DELAY
       expect(offer.expires_at).to eq(expiration_time)
     end
   end

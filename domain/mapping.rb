@@ -1,13 +1,13 @@
 require 'lotus/model/mapper'
 
-require 'pairoulette/offer'
-require 'pairoulette/request'
-require 'pairoulette/repositories/offer_repository'
-require 'pairoulette/repositories/request_repository'
+require_relative 'offer'
+require_relative 'request'
+require_relative 'repositories/offer_repository'
+require_relative 'repositories/request_repository'
 
 require 'lotus/model/adapters/sql_adapter'
 
-module Pairoulette
+module Domain
   @@mapping = Lotus::Model::Mapper.new do
     collection :offers do
       entity     Offer

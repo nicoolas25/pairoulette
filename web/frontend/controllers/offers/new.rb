@@ -1,4 +1,4 @@
-require 'pairoulette'
+require 'domain'
 
 module Frontend::Controllers::Offers
   class New
@@ -7,7 +7,7 @@ module Frontend::Controllers::Offers
     expose :offer
 
     def call(params)
-      @offer = Pairoulette::Offer.new
+      @offer = Domain::Offer.new
     end
   end
 end

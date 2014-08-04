@@ -1,4 +1,4 @@
-require 'pairoulette/migrator'
+require 'domain/migrator'
 
-Pairoulette::Migrator.migrate!
-Pairoulette.load!
+Domain::Migrator.migrate!
+Domain.load!

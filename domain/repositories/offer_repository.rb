@@ -1,6 +1,6 @@
 require 'lotus/repository'
 
-module Pairoulette::Repositories
+module Domain::Repositories
   class OfferRepository
     include Lotus::Repository
 

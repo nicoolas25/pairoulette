@@ -1,6 +1,6 @@
 require 'lotus/model'
 
-module Pairoulette
+module Domain
   class Request
     include Lotus::Entity
 

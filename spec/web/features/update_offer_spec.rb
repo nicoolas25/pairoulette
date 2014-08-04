@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Update an offer' do
-  let(:repository) { Pairoulette::Repositories::OfferRepository }
+  let(:repository) { Domain::Repositories::OfferRepository }
   let(:offer) { Factory.offer(lang: 'en') }
 
   background do

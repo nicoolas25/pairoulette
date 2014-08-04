@@ -1,5 +1,6 @@
 require 'faker'
-require 'pairoulette/offer'
+
+require 'domain/offer'
 
 module Factory
   ORDER_LANGS = %w(fr en).freeze
@@ -13,7 +14,7 @@ module Factory
       comments: Faker::Lorem.paragraph(1, false, 2),
     }
     attributes = default.merge(attributes)
-    Pairoulette::Offer.new(attributes)
+    Domain::Offer.new(attributes)
   end
 
   def self.expired_offer(attributes = {})

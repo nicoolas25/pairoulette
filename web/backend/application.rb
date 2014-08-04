@@ -15,7 +15,8 @@ module Backend
       load_paths << [
         'controllers',
         'presenters',
-        'views'
+        'views',
+        'forms',
       ]
 
       layout    :backend

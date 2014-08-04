@@ -5,7 +5,7 @@ require 'active_support/core_ext/date/calculations'
 require 'active_support/core_ext/time/calculations'
 require 'active_support/core_ext/numeric/time'
 
-module Pairoulette
+module Domain
   class Offer
     EXPIRATION_DELAY = 7.days
 

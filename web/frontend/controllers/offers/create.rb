@@ -1,4 +1,4 @@
-require 'pairoulette'
+require 'domain'
 
 module Frontend::Controllers::Offers
   class Create
@@ -15,11 +15,11 @@ module Frontend::Controllers::Offers
     private
 
     def repository
-      Pairoulette::Repositories::OfferRepository
+      Domain::Repositories::OfferRepository
     end
 
     def build_offer_from(params)
-      Pairoulette::Offer.new({
+      Domain::Offer.new({
         email: params[:email],
         duration: params[:duration],
         lang: params[:lang],

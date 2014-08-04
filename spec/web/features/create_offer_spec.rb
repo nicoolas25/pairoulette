@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Create an offer' do
-  let(:repository) { Pairoulette::Repositories::OfferRepository }
+  let(:repository) { Domain::Repositories::OfferRepository }
 
   background do
     # Given the repository is empty

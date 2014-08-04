@@ -1,6 +1,6 @@
 require 'sequel'
 
-module Pairoulette
+module Domain
   class Migrator
     def self.migrate!
       db = Sequel.connect(ENV['DATABASE_URL'])

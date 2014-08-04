@@ -1,3 +1,6 @@
+rootdir = File.join(__dir__, '..')
+$LOAD_PATH.unshift(rootdir) unless $LOAD_PATH.include?(rootdir)
+
 ENV['RACK_ENV'] = ENV['LOTUS_ENV'] ||= 'test'
 
 require 'bundler/setup'
@@ -5,8 +8,7 @@ require 'dotenv/deployment'
 require 'capybara'
 require 'capybara/rspec'
 require 'chronic'
-
-require 'pairoulette'
+require 'domain'
 
 # FIXME: Shut down an activesupport warning with i18n. The app is not using it,
 # that's too bad that it's imported.

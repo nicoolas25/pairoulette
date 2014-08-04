@@ -1,9 +1,10 @@
 require 'spec_helper'
 require 'timecop'
-require 'pairoulette/repositories/offer_repository'
 
-describe Pairoulette::Repositories::OfferRepository do
-  let(:repository) { Pairoulette::Repositories::OfferRepository }
+require 'domain/repositories/offer_repository'
+
+describe Domain::Repositories::OfferRepository do
+  let(:repository) { Domain::Repositories::OfferRepository }
 
   describe '.visible' do
     subject { repository.visible }
@@ -52,7 +53,7 @@ describe Pairoulette::Repositories::OfferRepository do
       end
 
       it 'retrieves an offer by its uid' do
-        expect(subject).to be_a_kind_of(Pairoulette::Offer)
+        expect(subject).to be_a_kind_of(Domain::Offer)
       end
     end
   end

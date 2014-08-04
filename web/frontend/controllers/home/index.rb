@@ -1,4 +1,4 @@
-require 'pairoulette'
+require 'domain'
 
 module Frontend::Controllers::Home
   class Index
@@ -7,7 +7,7 @@ module Frontend::Controllers::Home
     expose :offers
 
     def call(params)
-      @offers = Pairoulette::Repositories::OfferRepository.visible
+      @offers = Domain::Repositories::OfferRepository.visible
     end
   end
 end

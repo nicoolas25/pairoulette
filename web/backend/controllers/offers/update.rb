@@ -1,4 +1,4 @@
-require 'pairoulette'
+require 'domain'
 
 module Backend::Controllers::Offers
   class Update
@@ -13,7 +13,7 @@ module Backend::Controllers::Offers
     private
 
     def repository
-      Pairoulette::Repositories::OfferRepository
+      Domain::Repositories::OfferRepository
     end
 
     def update_offer_with(offer, params)

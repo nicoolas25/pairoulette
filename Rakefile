@@ -10,7 +10,7 @@ namespace :db do
   desc 'Migrate the database'
   task :migrate do
     require 'pairoulette/migrator'
-    Pairoulette::Migrator.migrate!
+    Domain::Migrator.migrate!
   end
 
   desc 'Load dummy data'

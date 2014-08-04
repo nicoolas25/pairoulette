@@ -1,4 +1,4 @@
-require 'pairoulette'
+require 'domain'
 
 module Backend::Controllers::Offers
   class Monitor
@@ -13,7 +13,7 @@ module Backend::Controllers::Offers
     private
 
     def repository
-      Pairoulette::Repositories::OfferRepository
+      Domain::Repositories::OfferRepository
     end
   end
 end
