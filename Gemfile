@@ -10,6 +10,7 @@ gem 'rake'
 gem 'dotenv'
 gem 'dotenv-deployment'
 gem 'activesupport'
+gem 'virtus'
 gem 'reform'
 
 gem 'faker'

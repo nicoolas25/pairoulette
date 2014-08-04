@@ -6,22 +6,20 @@ module Backend::Controllers::Offers
 
     def call(params)
       offer = repository.find_by_uid(params[:uid])
-      update_offer_with(offer, params)
+      form  = Backend::OfferForm.new(offer)
+      offer = form.fill_with!(params, self)
+      repository.persist(offer)
       redirect_to Backend::Routes.path(:monitor, uid: params[:uid])
+    end
+
+    def form_invalid
+      halt 422
     end
 
     private
 
     def repository
       Domain::Repositories::OfferRepository
-    end
-
-    def update_offer_with(offer, params)
-      offer.duration = params[:duration] if params[:duration]
-      offer.lang     = params[:lang]     if params[:lang]
-      offer.summary  = params[:summary]  if params[:summary]
-      offer.comments = params[:comments] if params[:comments]
-      repository.persist(offer)
     end
   end
 end
