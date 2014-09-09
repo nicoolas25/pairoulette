@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.2'
+
 gem 'lotusrb',     github: 'lotus/lotus'
 gem 'lotus-model', github: 'lotus/model'
 gem 'slim'
