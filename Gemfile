@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
-
 gem 'lotusrb',     github: 'lotus/lotus'
 gem 'lotus-model', github: 'lotus/model'
-gem 'sqlite3'
 gem 'slim'
+
+gem 'pg',      group: :production
+gem 'sqlite3', group: :development
 
 gem 'rake'
 gem 'dotenv'
