@@ -11,7 +11,7 @@ task default: :spec
 namespace :db do
   desc 'Migrate the database'
   task :migrate do
-    require 'pairoulette/migrator'
+    require 'domain/migrator'
     Domain::Migrator.migrate!
   end
 
