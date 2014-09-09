@@ -8,6 +8,7 @@ module Backend::Controllers::Offers
       offer = repository.find_by_uid(params[:uid])
       form  = Backend::OfferForm.new(offer)
       offer = form.fill_with!(params, self)
+      offer.reset_expiration if offer.expired?
       repository.persist(offer)
       redirect_to Backend::Routes.path(:monitor, uid: params[:uid])
     end

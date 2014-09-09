@@ -134,6 +134,10 @@ h3 {
     .offer-category-duration, .offer-category-expiration {
         background: #5aba59;
     }
+    .offer-category-expired {
+        background: #dd514c;
+    }
+
 
 .offer-images {
     margin: 1em 0;

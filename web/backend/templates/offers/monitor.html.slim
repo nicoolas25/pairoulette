@@ -7,6 +7,8 @@
       h2.offer-title Email: #{offer.email}
       p.offer-meta
         a.offer-category.offer-category-expiration = offer.f_expires_on
+        - if offer.expired?
+          a.offer-category.offer-category-expired Expired
 
     .offer-description
       form#offer-update.pure-form.pure-form-stacked method="POST"

@@ -25,5 +25,13 @@ module Domain
     def expires_at
       @expires_at ||= Time.now + EXPIRATION_DELAY
     end
+
+    def expired?
+      expires_at < Time.now
+    end
+
+    def reset_expiration
+      @expires_at = nil
+    end
   end
 end
