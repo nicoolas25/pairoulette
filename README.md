@@ -23,7 +23,7 @@ want:
 When an offer is submited, its author will receive an email with a link to the
 monitoring interface of this offer.
 
-A review of the offers should condition its publication.
+A review of the offer should condition its publication.
 
 The offers die after 7 days of publication but can be re-published via the
 monitoring interface.

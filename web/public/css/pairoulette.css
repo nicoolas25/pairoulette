@@ -79,7 +79,7 @@ h3 {
     text-decoration: none;
 }
 
-.content-subhead {
+.content-subhead, #about .subhead {
     text-transform: uppercase;
     color: #aaa;
     border-bottom: 1px solid #eee;
@@ -107,7 +107,7 @@ h3 {
     float: right;
     margin-left: 1em;
 }
-.offer-description {
+.offer-description, #about p {
     font-family: Georgia, "Cambria", serif;
     color: #444;
     line-height: 1.8em;
