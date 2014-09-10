@@ -30,3 +30,10 @@
             = offer.comments
 
           button.pure-button.pure-button-primary type="submit" Update
+
+    .offer-requests
+      ul#requests
+        - requests.each do |request|
+          li
+            span.contact = request.contact
+            span.comments = request.comments

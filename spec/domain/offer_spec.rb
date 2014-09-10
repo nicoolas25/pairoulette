@@ -13,7 +13,7 @@ describe '#uid' do
 end
 
 describe '#expires_at' do
-  let(:offer) { Factory.offer(expires_at: nil) }
+  let(:offer) { Factory.offer }
 
   it 'is set Offer::EXPIRATION_DELAY after today' do
     Timecop.freeze do
@@ -33,7 +33,7 @@ describe '#expired?' do
   end
 
   context 'when the expired_at is more than Offer::EXPIRATION_DELAY days ago' do
-    let(:offer) { Factory.offer(expires_at: Time.now - Domain::Offer::EXPIRATION_DELAY - 1.day) }
+    let(:offer) { Factory.expired_offer }
 
     it 'is true' do
       expect(subject).to eq(true)
@@ -44,12 +44,11 @@ end
 describe '#reset_expiration' do
   subject { offer.reset_expiration }
 
-  let(:expiration_time) { Time.now - Domain::Offer::EXPIRATION_DELAY - 1.day }
-  let(:offer) { Factory.offer(expires_at: expiration_time) }
+  let(:offer) { Factory.expired_offer }
 
   it 'changes the expires_at attribute' do
     Timecop.freeze do
-      expect{ subject }.to change{ offer.expires_at }.from(expiration_time)
+      expect{ subject }.to change{ offer.expires_at }
     end
   end
 end

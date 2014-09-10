@@ -1,6 +1,7 @@
 require 'faker'
 
 require 'domain/offer'
+require 'domain/request'
 
 module Factory
   ORDER_LANGS = %w(fr en).freeze
@@ -23,5 +24,14 @@ module Factory
     }
     attributes = default.merge(attributes)
     offer(attributes)
+  end
+
+  def self.request(attributes = {})
+    default = {
+      contact: Faker::Internet.email,
+      comments: Faker::Lorem.paragraph(1, false, 2),
+    }
+    attributes = default.merge(attributes)
+    Domain::Request.new(attributes)
   end
 end

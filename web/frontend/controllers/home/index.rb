@@ -7,7 +7,7 @@ module Frontend::Controllers::Home
     expose :offers
 
     def call(params)
-      @offers = Domain::Repositories::OfferRepository.visible
+      @offers = Domain::Repositories::OfferRepository.visible.all
     end
   end
 end
