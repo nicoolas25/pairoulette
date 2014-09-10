@@ -5,9 +5,6 @@ module Domain
     def self.migrate!
       db = Sequel.connect(ENV['DATABASE_URL'])
 
-      db.drop_table? :requests
-      db.drop_table? :offers
-
       db.create_table! :offers do
         primary_key :id
         String :uid, null: false, unique: true
