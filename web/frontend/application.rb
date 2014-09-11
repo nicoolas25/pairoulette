@@ -6,16 +6,18 @@ module Frontend
       root __dir__
 
       routes do
-        get  '/',       to: 'home#index',    as: :home
-        get  '/about',  to: 'home#about',    as: :about
-        get  '/submit', to: 'offers#new',    as: :new_offer
-        post '/submit', to: 'offers#create', as: :create_offer
+        get  '/',         to: 'home#index',      as: :home
+        get  '/about',    to: 'home#about',      as: :about
+        get  '/submit',   to: 'offers#new',      as: :new_offer
+        post '/submit',   to: 'offers#create',   as: :create_offer
+        post '/requests', to: 'requests#create', as: :create_request
       end
 
       load_paths << [
         'controllers',
         'presenters',
-        'views'
+        'views',
+        'forms'
       ]
 
       layout    :frontend

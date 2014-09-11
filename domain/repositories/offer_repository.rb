@@ -21,5 +21,9 @@ module Domain::Repositories
     def self.find_by_uid(uid)
       query{ where(uid: uid) }.first
     end
+
+    def self.find_by_id(id)
+      query{ where(id: id) }.first
+    end
   end
 end

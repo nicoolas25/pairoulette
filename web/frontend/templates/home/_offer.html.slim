@@ -10,3 +10,15 @@ section.offer
   .offer-description
     p = offer.summary
     p = offer.comments
+
+  form.request-create.pure-form.pure-form-stacked method="POST" action="#{Frontend::Routes.path(:create_request)}"
+    fieldset
+      input name="offer_id" type="hidden" required="required" value=offer.id
+
+      label for="contact_for_#{offer.id}" Contact
+      input id="contact_for_#{offer.id}" name="contact" type="text" required="required" placeholder="your@email.com, @twitter_account, etc."
+
+      label for="comments_for_#{offer.id}" Comments
+      textarea id="comments_for_#{offer.id}" name="comments" rows="5" placeholder="Tell the author about you, about your skills, why you should pair together, ..."
+
+    button.pure-button type="submit" I'm interested!

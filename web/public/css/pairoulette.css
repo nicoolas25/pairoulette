@@ -188,3 +188,12 @@ h3 {
 #offer-create select {
   width: 100%;
 }
+
+form.request-create fieldset {
+  display: none;
+}
+
+form.request-create input,
+form.request-create textarea {
+  width: 100%;
+}

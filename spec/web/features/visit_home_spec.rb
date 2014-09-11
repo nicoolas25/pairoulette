@@ -1,8 +1,21 @@
 require 'spec_helper'
 
 feature 'Visit Home' do
-  scenario 'The page is shown properly' do
+  let(:repository) { Domain::Repositories::OfferRepository }
+
+  let(:offer) { Factory.offer }
+
+  background do
+    # Given an existing offer in the repository
+    repository.clear
+    repository.persist(offer)
+  end
+
+  scenario 'The list of offers is shown' do
+    # When I visit the homepage
     visit '/'
-    expect(page).to have_title('Pairoulette')
+
+    # Then the page should have an offer
+    expect(page).to have_css('.offers section.offer')
   end
 end
