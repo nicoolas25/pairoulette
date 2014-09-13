@@ -10,10 +10,18 @@ module Frontend
     validates :contact,  presence: true
 
     validate :offer_exists
+    validate :one_request_by_contact
 
     def offer_exists
       offer = Domain::Repositories::OfferRepository.find_by_id(offer_id)
       offer && !offer.expired?
+    end
+
+    def one_request_by_contact
+      Domain::Repositories::RequestRepository.find_like({
+        offer_id: offer_id,
+        contact: contact,
+      }).nil?
     end
   end
 end

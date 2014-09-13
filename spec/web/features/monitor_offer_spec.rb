@@ -30,7 +30,7 @@ feature 'Monitor an offer' do
     visit "/backend/#{offer.uid}"
 
     # Then the page should show him a list of requests
-    expect(page).to have_css('ul#requests li')
+    expect(page).to have_css('#requests .request')
     expect(page).to have_content(request.contact)
     expect(page).to have_content(request.comments)
   end

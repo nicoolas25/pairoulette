@@ -197,3 +197,7 @@ form.request-create input,
 form.request-create textarea {
   width: 100%;
 }
+
+table#requests {
+  width: 100%;
+}

@@ -1,0 +1,18 @@
+.offer-requests
+  h1.content-subhead Received requests
+
+  table#requests.pure-table.pure-table-horizontal
+    thead
+      tr
+        th Contact
+        th Comments
+        th
+    tbody
+      - requests.each do |request|
+        tr.request
+          td = request.contact
+          td = request.comments
+          td
+            form.pure-form action="#{Backend::Routes.path(:delete_request, uid: offer.uid, id: request.id)}" method="POST"
+              input type="hidden" name="_method" required="required" value="DELETE"
+              button.pure-button type="submit" Remove

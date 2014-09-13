@@ -11,29 +11,6 @@
           a.offer-category.offer-category-expired Expired
 
     .offer-description
-      form#offer-update.pure-form.pure-form-stacked method="POST"
-        fieldset
-          label for="duration" Duration
-          input#duration name="duration" type="number" required="required" placeholder="45" value=offer.duration
+      == render partial: 'offers/update_form', locals: { offer: offer }
 
-          label for="lang" Language
-          select#lang name="lang" required="required"
-            - {'en' => 'English', 'fr' => 'French', 'en fr' => 'French or English'}.each do |key, value|
-              option value=key selected=offer.lang_selected(key) = value
-
-          label for="summary" Summary
-          textarea#summary name="summary" rows="5" required="required" placeholder="What you want to do during the session, how, why you're offering a session, ..."
-            = offer.summary
-
-          label for="comments" Comments
-          textarea#comments name="comments" rows="5" placeholder="Tell us about the tools you use or want to use, about the desired level of the person you're looking for, ..."
-            = offer.comments
-
-          button.pure-button.pure-button-primary type="submit" Update
-
-    .offer-requests
-      ul#requests
-        - requests.each do |request|
-          li
-            span.contact = request.contact
-            span.comments = request.comments
+    == render partial: 'offers/requests', locals: { requests: requests }
